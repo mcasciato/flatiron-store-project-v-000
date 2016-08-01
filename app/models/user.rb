@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :current_cart, class_name: "Cart", foreign_key: "cart_id"
 end
