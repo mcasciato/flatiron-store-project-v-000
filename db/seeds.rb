@@ -13,3 +13,14 @@ Item.all.each do |item|
   item.save
   counter += 1
 end
+
+
+#added 10 seed users
+
+10.times do
+  User.create(
+    email: Faker::Internet.email,
+    password: 'testtest',
+    password_confirmation: 'testtest'
+  )
+end
