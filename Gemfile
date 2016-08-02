@@ -25,6 +25,7 @@ group :test, :development do
   gem "pry"
   gem "guard-rspec", require: false
   gem "thin"
+  gem "learn-co"
 end
 
 gem "bootstrap-sass", "~> 3.1.1"
