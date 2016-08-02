@@ -4,7 +4,11 @@ class Cart < ActiveRecord::Base
   has_many :items, through: :line_items
 
   def total
-    items.sum(:price)
+    total = 0
+    self.line_items.each do |line_item|
+      total += (line_item.item.price * line_item.quantity)
+    end
+    total
   end
 
   def add_item(item_id)
@@ -17,4 +21,5 @@ class Cart < ActiveRecord::Base
     end
     line_item
   end
+
 end
