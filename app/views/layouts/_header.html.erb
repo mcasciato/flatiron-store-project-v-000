@@ -15,7 +15,6 @@
           <li><%= link_to "Signed in as " + current_user.email, user_path(current_user) %></li>
           <% if !current_user.current_cart.nil? %>
             <li><%= link_to "Cart", cart_path(current_user.current_cart) %></li>
-            <li><%= link_to "Cart", cart_path(current_cart) %></li>
           <% end %>
           <li><%= link_to("Sign out", destroy_user_session_path, :method => "delete") %></li>
         <% else %>
